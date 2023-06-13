@@ -85,7 +85,7 @@ export const useWeatherStore = defineStore({
         const temp = Math.trunc((Number(kelvin)-273.15)*10) / 10;
         return temp;
       }
-
+      //console.log(weatherArray[0]);
       //JSONデータから必要なデータを取り出し
       for(let i = 0; i < weatherArray.length; i++){
         this.weatherList.set(weatherArray[i].dt_txt,{

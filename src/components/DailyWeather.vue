@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type City, type WeatherList } from '@/stores/weather';
+import { type WeatherList } from '@/stores/weather';
 
 defineProps<WeatherList>();
 
@@ -9,7 +9,7 @@ defineProps<WeatherList>();
 
   <ul>
     <li class="card-title">{{ date }}</li>
-    <li class="small text-muted mt-2">{{ weatherState }}</li>
+    <li class="text-muted mt-2">{{ weatherState }}</li>
     <li><img v-bind:src = "Icon"></li>
     <li class="small text-muted mt-2">気温</li>
     <li>最高 {{maxTemp}}℃</li>

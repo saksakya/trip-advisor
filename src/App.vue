@@ -8,8 +8,6 @@ import 'bootstrap/dist/js/bootstrap.min.js'
     <h1>FreeFlow Journeys</h1>
   </header>
 
-  
-
   <main>
     <RouterView/>
   </main>
