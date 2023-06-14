@@ -75,7 +75,7 @@ const weatherList = computed(
   <p v-if="isLoading">データ取得中…</p>
   <section v-else>
 
-    <h2>{{ selectedCity.name }}の天気</h2>
+    <h4>{{ selectedCity.name }}, Japan Weather</h4>
     <div>
       <HourlyWeather
         v-for = "[id,weather] in weatherList.hourly"

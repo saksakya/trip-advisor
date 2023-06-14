@@ -17,23 +17,29 @@ const cityName = computed(
 
 <template>
   <main class="ms-3">
-    <section class ="d-flex">
-      <AutoInput/>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Top</li>
+    </ol>
 
-      <RouterLink v-bind:to="{name: 'CityList'}" class="ms-5 text-decoration-none lhLink">
-        Choose from city list
-      </RouterLink>
+    <section class="d-flex">
+      <div>
+        <p class="mb-0"><RouterLink v-bind:to="{name: 'CityList'}" class="text-decoration-none">
+            Choose from city list
+          </RouterLink></p>
+        <AutoInput/>
+      </div>
+
+      <div class = "ms-5 fw-bold lead">
+        <p>Ask AI for travel plans</p>
+      </div>
 
     </section>
+
     <WeatherInfo class="mt-3"/>
   </main>
 </template>
 
 <style scoped>
-
-.lhLink{
-  line-height: 5rem;
-}
 
 label{
   display: block;

@@ -44,49 +44,49 @@ export const useWeatherStore = defineStore({
     prepareCityList(){
       this.cityList.set("Sapporo",
       {
-        name : "札幌",
+        name : "Sapporo",
         q : "Sapporo",
         lang : "en"
       });
       this.cityList.set("Sendai",
       {
-        name : "仙台",
+        name : "Sendai",
         q : "Sendai",
         lang : "en"
       });
       this.cityList.set("Tokyo",
       {
-        name : "東京",
+        name : "Tokyo",
         q : "Tokyo",
         lang : "en"
       });
       this.cityList.set("Osaka",
       {
-        name : "大阪",
+        name : "Osaka",
         q : "Osaka",
         lang : "en"
       });
       this.cityList.set("Nagoya",
       {
-        name : "名古屋",
+        name : "Nagoya",
         q : "Nagoya",
         lang : "en"
       });
       this.cityList.set("Shizuoka",
       {
-        name : "静岡",
+        name : "Shizuoka",
         q : "shizuoka",
         lang : "en"
       });
       this.cityList.set("Hiroshima",
       {
-        name : "広島",
+        name : "Hiroshima",
         q : "Hiroshima",
         lang : "en"
       });
       this.cityList.set("Fukuoka",
       {
-        name : "福岡",
+        name : "Fukuoka",
         q : "Fukuoka",
         lang : "en"
       });

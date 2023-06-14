@@ -4,8 +4,8 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 </script>
 
 <template>
-  <header>
-    <h1>FreeFlow Journeys</h1>
+  <header class="ms-2 mt-3">
+    <h3>FreeFlow Journeys</h3>
   </header>
 
   <main>
