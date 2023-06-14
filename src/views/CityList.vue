@@ -17,12 +17,13 @@ const cityList = computed(
 
 <template>
   <section>
-    <h2>都市リスト</h2>
-    <ul>
+    <h2>City List</h2>
+    <ul class = "list-group ms-3 text-decoration-none resultList">
       <li
         v-for = "[id, city] in cityList"
-        v-bind:key = "id">
-        <RouterLink v-bind:to="{name: 'WeatherInfo',params:{id:id}}">
+        v-bind:key = "id"
+        class="list-group-item  list-group-item-action">
+        <RouterLink v-bind:to="{name: 'WeatherCity',params:{id:id}}" class="text-decoration-none link-dark d-block">
           {{ city.name }}の天気
         </RouterLink>
       </li>
@@ -30,3 +31,13 @@ const cityList = computed(
   </section>
 </template>
 
+<style scoped>
+.resultList{
+  width: 16rem;
+}
+
+ul > li:hover {
+  background-color:#a9ceec ;
+}
+
+</style>

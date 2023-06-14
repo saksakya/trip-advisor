@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export interface City{
   name : string;
   q : string;
-  //lang? : string;
+  lang : string;
 }
 
 export interface WeatherList{
@@ -29,8 +29,9 @@ export const useWeatherStore = defineStore({
     return{
       cityList : new Map <string, City>(),
       selectedCity:{
-        name:"",
-        q:"",
+        name:"Tokyo",
+        q:"Tokyo",
+        lang:"en"
       },
       isLoading : true,
       weatherList: new Map <string,WeatherList>()
@@ -41,24 +42,72 @@ export const useWeatherStore = defineStore({
   },
   actions:{
     prepareCityList(){
+      this.cityList.set("Sapporo",
+      {
+        name : "札幌",
+        q : "Sapporo",
+        lang : "en"
+      });
+      this.cityList.set("Sendai",
+      {
+        name : "仙台",
+        q : "Sendai",
+        lang : "en"
+      });
+      this.cityList.set("Tokyo",
+      {
+        name : "東京",
+        q : "Tokyo",
+        lang : "en"
+      });
       this.cityList.set("Osaka",
       {
         name : "大阪",
-        q : "Osaka"
+        q : "Osaka",
+        lang : "en"
       });
-      this.cityList.set("Kobe",
+      this.cityList.set("Nagoya",
       {
-        name : "神戸",
-        q : "Kobe"
+        name : "名古屋",
+        q : "Nagoya",
+        lang : "en"
       });
-      this.cityList.set("Himeji",
+      this.cityList.set("Shizuoka",
       {
-        name : "姫路",
-        q : "Himeji"
+        name : "静岡",
+        q : "shizuoka",
+        lang : "en"
       });
+      this.cityList.set("Hiroshima",
+      {
+        name : "広島",
+        q : "Hiroshima",
+        lang : "en"
+      });
+      this.cityList.set("Fukuoka",
+      {
+        name : "福岡",
+        q : "Fukuoka",
+        lang : "en"
+      });
+
     },
-    async recieveWeatherInfo(id:string){
+    
+    prepareCityFromID(id:string){
       this.selectedCity = this.cityList.get(id) as City;
+      this.recieveWeatherInfo();
+    },
+
+    prepareCityName(city){
+      this.selectedCity = {
+        name : city.name,
+        q : city.name,
+        lang : "en"
+      }
+      this.recieveWeatherInfo();
+    },
+
+    async recieveWeatherInfo(){
 
       const weatherInfoUrl = "https://api.openweathermap.org/data/2.5/forecast";
       const formerIconURL = "https://openweathermap.org/img/wn/"
@@ -70,7 +119,7 @@ export const useWeatherStore = defineStore({
         appId:string
       } =
       {
-        lang:"en",
+        lang:this.selectedCity.lang,
         q:this.selectedCity.q,
         appId:import.meta.env.VITE_OPEN_WEATHER_API_KEY
       }

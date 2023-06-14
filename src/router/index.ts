@@ -1,17 +1,23 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import searchPlace from "@/views/searchPlace.vue";
+import TopPage from "@/views/TopPage.vue";
+import CityList from "@/views/CityList.vue";
 
 const routeSettings: RouteRecordRaw[] = [
   {
     path:"/",
-    name:"searchPlace",
-    component:searchPlace
+    name:"TopPage",
+    component:TopPage
+  },
+  {
+    path:"/citylist",
+    name:"CityList",
+    component:CityList
   },
  {
-    path:"/weatherInfo/:id",
-    name:"WeatherInfo",
+    path:"/cityList/:id",
+    name:"WeatherCity",
     component:() =>{
-      return import("@/views/WeatherInfo.vue");
+      return import("@/views/WeatherCity.vue");
     },
     props:true
   },
