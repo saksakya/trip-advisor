@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useWeatherStore, type City, type WeatherList } from '@/stores/weather';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { format } from 'date-fns';
 import ja from 'date-fns/locale/ja';
 import DailyWeather from '@/components/DailyWeather.vue';
@@ -71,11 +71,13 @@ const weatherList = computed(
 </script>
 
 <template>
-
-  <p v-if="isLoading">データ取得中…</p>
+  <div v-if="isLoading">
+    <span class="spinner-border  spinner-border-sm mt-3" role="status"></span>
+    <span><strong class=" ms-1">Loading...</strong></span>
+  </div>
   <section v-else>
 
-    <h4>{{ selectedCity.name }}, Japan Weather</h4>
+    <h5>{{ selectedCity.name }}, Japan Weather</h5>
     <div>
       <HourlyWeather
         v-for = "[id,weather] in weatherList.hourly"

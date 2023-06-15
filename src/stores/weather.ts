@@ -92,7 +92,6 @@ export const useWeatherStore = defineStore({
       });
 
     },
-    
     prepareCityFromID(id:string){
       this.selectedCity = this.cityList.get(id) as City;
       this.recieveWeatherInfo();

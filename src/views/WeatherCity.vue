@@ -34,7 +34,7 @@ weatherStore.prepareCityFromID(props.id);
     </nav>
 
     <WeatherInfo class="mt-3"/>
-    
+
   </main>
 </template>
 

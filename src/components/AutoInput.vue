@@ -42,8 +42,8 @@
 
 <template>
   <div>
-    <label for = "search" class ="form-label">
-      Type the name of city to search
+    <label for = "search" class ="form-label fw-bold">
+      Or type the name of city to search
     </label>
     <input
       type = "text"
@@ -54,20 +54,18 @@
       v-model="searchTerm"
       >
 
-  <div v-if="searchCities.length" >
-    <p class ="my-1">Showing {{ searchCities.length }} of {{ cities.length }} results</p>
-    <ul class = "list-group resultList">
-      <li
-        v-for="city in searchCities"
-            :key="city.name"
-            v-on:click = "selectCity(city)"
-            class="list-group-item  list-group-item-action"
-        >
-        {{ city.name }}</li>
-    </ul>
-  </div>
-
-
+    <div v-if="searchCities.length" >
+      <p class ="my-1">Showing {{ searchCities.length }} of {{ cities.length }} results</p>
+      <ul class = "list-group resultList">
+        <li
+          v-for="city in searchCities"
+              :key="city.name"
+              v-on:click = "selectCity(city)"
+              class="list-group-item  list-group-item-action"
+          >
+          {{ city.name }}</li>
+      </ul>
+    </div>
   </div>
 
 </template>
@@ -76,7 +74,6 @@
   .form-control{
     width : 20rem;
   }
-
   .resultList{
     width: 21rem;
     height: 20rem;
